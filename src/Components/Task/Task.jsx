@@ -39,7 +39,7 @@ function Task({task, i}) {
                     <Modal.Title>Edit Task </Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <input type='text' className='form-control-lg' onChange={e=>changer(e.target.value)}/>
+                    <input type='text' className='form-control-lg' defaultValue={task.title} onChange={e=>changer(e.target.value)}/>
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
