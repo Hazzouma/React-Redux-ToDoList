@@ -1,0 +1,7 @@
+.mainBtn{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 0 10%;
+}
