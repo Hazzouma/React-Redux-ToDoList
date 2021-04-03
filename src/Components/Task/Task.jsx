@@ -10,11 +10,12 @@ function Task({task, i}) {
     const dispatch = useDispatch();
 
     const [show, setShow] = useState(false);
-    const handleClose = () => {
+    const handleConfirm = () => {
         setShow(false)
-        dispatch(modifyTask({ modifiedName, id: task.id }));
+        modifiedName!=='' ? dispatch(modifyTask({ modifiedName, id: task.id })) : alert('Set true value!')
     };
     const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
 
     const [modifiedName, setModifiedName] = useState('');
     const changer = (s) => setModifiedName(s);
@@ -45,7 +46,7 @@ function Task({task, i}) {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="primary" onClick={handleConfirm}>
                         Save Changes
                     </Button>
                 </Modal.Footer>
